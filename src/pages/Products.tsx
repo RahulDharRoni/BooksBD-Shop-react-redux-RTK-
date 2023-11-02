@@ -103,6 +103,9 @@ export default function Products() {
             <option>Classic</option>
           </select>
         </div>
+        <div>
+          
+        </div>
       </div>
       <div className="col-span-9 grid grid-cols-3 gap-10 pb-20">
         {productsData?.map((product: IProduct) => (

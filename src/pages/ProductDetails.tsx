@@ -1,20 +1,14 @@
 import ProductReview from '@/components/ProductReview';
 import {
+  useDeleteBooksMutation,
   useEditBooksMutation,
   useGetSpecificBooksQuery,
 } from '@/redux/api/apiSlice';
 import { useParams } from 'react-router-dom';
 import { BiEdit } from 'react-icons/bi';
 import { AiFillDelete } from 'react-icons/ai';
-import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-// type Book = {
-//   name: string;
-//   category: string;
-//   author: string;
-//   pricing: number;
-//   status: string;
-// };
+
 enum GenderEnum {
   selfhelp = 'Self-Help',
   Romantic = 'Romantic',
@@ -37,6 +31,7 @@ export default function ProductDetails() {
   const [editBooks, { isLoading, isError, isSuccess }] = useEditBooksMutation();
   const { _id } = useParams();
   const { data: product } = useGetSpecificBooksQuery(_id);
+  const [deleteBooks] = useDeleteBooksMutation();
 
   const { register, handleSubmit, reset } = useForm<IFormInput>();
   const onSubmit: SubmitHandler<IFormInput> = (Editdata) => {
@@ -51,6 +46,10 @@ export default function ProductDetails() {
       console.error('Edit Books Error:');
     }
     reset();
+  };
+
+  const handleDelete = (id: string | undefined) => {
+    deleteBooks(id);
   };
 
   return (
@@ -156,9 +155,12 @@ export default function ProductDetails() {
                     </button>
                   </form> */}
 
-                  <form onSubmit={handleSubmit(onSubmit)}>
+                  <form
+                    className="flex flex-col justify-center w-full"
+                    onSubmit={handleSubmit(onSubmit)}
+                  >
                     <div className="flex justify-between w-full items-center my-2">
-                      <label>Name</label>
+                      <label className="mx-4">Name</label>
                       <input
                         className="input input-bordered w-full max-w-lg"
                         {...register('name')}
@@ -166,14 +168,14 @@ export default function ProductDetails() {
                     </div>
 
                     <div className="flex justify-between w-full items-center my-2">
-                      <label>author</label>
+                      <label className="mx-4">author</label>
                       <input
                         className="input input-bordered w-full max-w-xs"
                         {...register('author')}
                       />
                     </div>
                     <div className="flex justify-between w-full items-center my-2">
-                      <label>Category</label>
+                      <label className="mx-4">Category</label>
                       <select
                         className="input input-bordered max-w-xs"
                         {...register('category')}
@@ -184,7 +186,7 @@ export default function ProductDetails() {
                       </select>
                     </div>
                     <div className="flex justify-between w-full items-center my-2">
-                      <label>Price</label>
+                      <label className="mx-4">Price</label>
 
                       <input
                         className="input input-bordered w-full max-w-xs"
@@ -192,7 +194,7 @@ export default function ProductDetails() {
                       />
                     </div>
                     <div className="flex justify-between w-full items-center my-2">
-                      <label>Status</label>
+                      <label className="mx-4">Status</label>
                       <select
                         className="input input-bordered w-full max-w-xs"
                         {...register('status')}
@@ -207,7 +209,10 @@ export default function ProductDetails() {
                 </div>
               </div>
             </dialog>
-            <button className="btn btn-active ml-2">
+            <button
+              onClick={() => handleDelete(_id)}
+              className="btn btn-active ml-2"
+            >
               <AiFillDelete className="text-2xl"></AiFillDelete>
             </button>
           </div>

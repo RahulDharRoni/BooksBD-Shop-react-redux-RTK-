@@ -55,7 +55,13 @@ export default function Navbar() {
                     </Avatar>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
-                    <DropdownMenuLabel>Account</DropdownMenuLabel>
+                    <DropdownMenuLabel>My Dashboard</DropdownMenuLabel>
+                    <Link to="/login">
+                      <DropdownMenuLabel>Login</DropdownMenuLabel>
+                    </Link>
+                    <Link to="/signup">
+                      <DropdownMenuLabel>Sign Up</DropdownMenuLabel>
+                    </Link>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem className="cursor-pointer">
                       Profile
