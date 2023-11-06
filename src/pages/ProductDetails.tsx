@@ -77,7 +77,7 @@ export default function ProductDetails() {
 
             <dialog
               id="my_modal_5"
-              className="modal modal-bottom sm:modal-middle"
+              className=" modal modal-bottom sm:modal-middle"
             >
               <div className="modal-box">
                 <h3 className="font-bold text-lg">Hello!</h3>
@@ -85,79 +85,10 @@ export default function ProductDetails() {
                   Press ESC key or click the button below to close
                 </p>
                 <div className="modal-action px-8 flex justify-center w-full">
-                  {/* <form className="w-full">
-                    <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                      ✕
-                    </button>
-                    <div className="flex justify-between items-center">
-                      <label htmlFor="name">Name:</label>
-                      <input
-                        className="input input-bordered w-full max-w-xs m-2"
-                        type="text"
-                        name="name"
-                        id="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                      />
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <label htmlFor="category">Category:</label>
-                      <input
-                        className="input input-bordered w-full max-w-xs m-2"
-                        type="text"
-                        name="category"
-                        id="category"
-                        value={formData.category}
-                        onChange={handleInputChange}
-                      />
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <label htmlFor="author">Author:</label>
-                      <input
-                        className="input input-bordered w-full max-w-xs m-2"
-                        type="text"
-                        name="author"
-                        id="author"
-                        value={formData.author}
-                        onChange={handleInputChange}
-                      />
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <label htmlFor="pricing">Pricing:</label>
-                      <input
-                        className="input input-bordered w-full max-w-xs m-2"
-                        type="number"
-                        name="pricing"
-                        id="pricing"
-                        value={formData.pricing}
-                        onChange={handleInputChange}
-                      />
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <label htmlFor="status">Status:</label>
-                      <select
-                        className="input input-bordered w-full max-w-xs m-2"
-                        name="status"
-                        id="status"
-                        value={formData.status}
-                        onChange={handleInputChange}
-                      >
-                        <option value="In Stock">In Stock</option>
-                        <option value="Out of Stock">Out of Stock</option>
-                      </select>
-                    </div>
-                    <button
-                      className="btn btn-active btn-ghost w-full"
-                      type="submit"
-                      onSubmit={handleSubmit}
-                    >
-                      Submit
-                    </button>
-                  </form> */}
-
                   <form
                     className="flex flex-col justify-center w-full"
                     onSubmit={handleSubmit(onSubmit)}
+                    method="dialog"
                   >
                     <div className="flex justify-between w-full items-center my-2">
                       <label className="mx-4">Name</label>

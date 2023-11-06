@@ -8,12 +8,12 @@ import {
   usePostCommentMutation,
 } from '@/redux/api/apiSlice';
 
-const dummyComments = [
-  'Bhalo na',
-  'Ki shob ghori egula??',
-  'Eta kono product holo ??',
-  '200 taka dibo, hobe ??',
-];
+// const dummyComments = [
+//   'Bhalo na',
+//   'Ki shob ghori egula??',
+//   'Eta kono product holo ??',
+//   '200 taka dibo, hobe ??',
+// ];
 
 interface IProps {
   id: string;
