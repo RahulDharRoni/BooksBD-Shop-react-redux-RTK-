@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 
 import './css/home.css';
-import hero from '@/assets/images/hero.png';
+
 import catgallarge from '@/assets/images/cat-gal-large.webp';
 import catgalmid from '@/assets/images/cat-gal-mid.webp';
 import catgalsmall from '@/assets/images/cat-gal-small.webp';
@@ -11,12 +11,9 @@ import home3 from '@/assets/images/home-3-slider-1.webp';
 import books1 from '@/assets/images/books1.png';
 import books2 from '@/assets/images/books2.png';
 import home3slider2 from '@/assets/images/home-3-slider-2.webp';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-// import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Link } from 'react-router-dom';
 import Footer from '@/layouts/Footer';
-// import React, { useRef, useState } from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
@@ -58,7 +55,7 @@ export default function Home() {
         ></div>
         <SwiperSlide className="slider-slide">
           <div
-            className="flex justify-between items-center px-64 "
+            className="flex justify-between items-center px-72 "
             style={{
               'background-image': `url(${home3})`,
               height: '500px',
@@ -85,7 +82,9 @@ export default function Home() {
                   nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean
                   feugiat non eros quis feugiat.
                 </p>
-                <button className="btn btn-warning">Shop</button>
+                <button className="btn btn-warning mt-6 font-extrabold">
+                  Shop
+                </button>
               </div>
             </div>
             <div className="basis-1/3 flex justify-center">
@@ -95,7 +94,7 @@ export default function Home() {
         </SwiperSlide>
         <SwiperSlide className="slider-slide">
           <div
-            className="flex justify-between items-center px-64"
+            className="flex justify-between items-center px-72"
             style={{
               'background-image': `url(${home3slider2})`,
               height: '500px',
@@ -122,7 +121,9 @@ export default function Home() {
                   nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean
                   feugiat non eros quis feugiat.
                 </p>
-                <button className="btn btn-secondary my-5">Shop</button>
+                <button className="btn btn-secondary mt-6 font-extrabold">
+                  Shop
+                </button>
               </div>
             </div>
             <div className="basis-1/3 flex justify-center">
@@ -157,69 +158,19 @@ export default function Home() {
         </div>
       </section>
       {/* End of Home Category Gallery  */}
-      <div className="mb-96">
+      <div className="mb-44">
         <div>
           <img className="mx-auto" src={books1} alt="" />
         </div>
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-5xl font-black text-primary uppercase mt-10">
-            The future of tech is here
+            The future of Books is here
           </h1>
           <Button className="mt-10" asChild>
             <Link to="/products">Brows all products</Link>
           </Button>
         </div>
       </div>
-      <section className="mb--30 space-dt--30">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-3 col-md-6 mt--30">
-              <div className="feature-box h-100">
-                <div className="icon">
-                  <i className="fas fa-shipping-fast"></i>
-                </div>
-                <div className="text">
-                  <h5>Free Shipping Item</h5>
-                  <p> Orders over $500</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-3 col-md-6 mt--30">
-              <div className="feature-box h-100">
-                <div className="icon">
-                  <i className="fas fa-redo-alt"></i>
-                </div>
-                <div className="text">
-                  <h5>Money Back Guarantee</h5>
-                  <p>100% money back</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-3 col-md-6 mt--30">
-              <div className="feature-box h-100">
-                <div className="icon">
-                  <i className="fas fa-piggy-bank"></i>
-                </div>
-                <div className="text">
-                  <h5>Cash On Delivery</h5>
-                  <p>Lorem ipsum dolor amet</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-xl-3 col-md-6 mt--30">
-              <div className="feature-box h-100">
-                <div className="icon">
-                  <i className="fas fa-life-ring"></i>
-                </div>
-                <div className="text">
-                  <h5>Help & Support</h5>
-                  <p>Call us : + 0123.4567.89</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <Footer />
     </>
   );

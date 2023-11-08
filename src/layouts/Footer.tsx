@@ -9,7 +9,7 @@ export default function Footer() {
     <div className="bg-[#242630] text-secondary p-20">
       <div className="flex justify-between">
         <div>
-          <img className="h-10" src={logo} alt="Logo" />
+          <h1 className="font-['Choplin'] font-extrabold text-4xl">BooksBD</h1>
         </div>
         <div className="flex gap-20">
           <ul className="space-y-2">
