@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const api = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5000/' }),
-  tagTypes: ['comments', 'editBooks', 'deleteBooks'],
+  tagTypes: ['comments', 'editBooks', 'deleteBooks', 'userData'],
   endpoints: (builder) => ({
     getBooks: builder.query({
       query: () => '/products',
@@ -42,6 +42,15 @@ export const api = createApi({
       }),
       invalidatesTags: ['deleteBooks'],
     }),
+    //User Information
+    userData: builder.mutation({
+      query: ({ data }) => ({
+        url: '/user',
+        method: 'POST',
+        bosy: data,
+      }),
+      invalidatesTags: ['userData'],
+    }),
   }),
 });
 
@@ -52,4 +61,5 @@ export const {
   useGetCommentQuery,
   useEditBooksMutation,
   useDeleteBooksMutation,
+  useUserDataMutation
 } = api;

@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import { useForm } from 'react-hook-form';
 import { userCreated } from '@/redux/features/user/userSlice';
 import { useAppDispatch } from '@/redux/hook';
+import { useUserDataMutation } from '@/redux/api/apiSlice';
 
 interface createSigninForm {
   email: string;
@@ -16,15 +17,19 @@ interface createSigninForm {
 type UserAuthFormProps = React.HTMLAttributes<HTMLDivElement>;
 
 export function SignupForm({ className, ...props }: UserAuthFormProps) {
+  const [userData, { isLoading, isError }] = useUserDataMutation();
+
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm<createSigninForm>();
   const dispatch = useAppDispatch();
+
   const onSubmit = (data: createSigninForm) => {
     console.log(data);
     dispatch(userCreated({ email: data.email, password: data.password }));
+    userData(data);
   };
 
   return (
