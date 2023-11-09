@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 import { userCreated } from '@/redux/features/user/userSlice';
 import { useAppDispatch } from '@/redux/hook';
 import { useUserDataMutation } from '@/redux/api/apiSlice';
+import { useNavigate } from 'react-router-dom';
 
 interface createSigninForm {
   email: string;
@@ -18,6 +19,7 @@ type UserAuthFormProps = React.HTMLAttributes<HTMLDivElement>;
 
 export function SignupForm({ className, ...props }: UserAuthFormProps) {
   const [userData, { isLoading, isError }] = useUserDataMutation();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -30,6 +32,7 @@ export function SignupForm({ className, ...props }: UserAuthFormProps) {
     console.log(data);
     dispatch(userCreated({ email: data.email, password: data.password }));
     userData(data);
+    navigate('/');
   };
 
   return (

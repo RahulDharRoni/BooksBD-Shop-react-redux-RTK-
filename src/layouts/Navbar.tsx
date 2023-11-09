@@ -14,11 +14,18 @@ import Cart from '../components/Cart';
 import logo from '../assets/images/technet-logo.png';
 import { useAppSelector } from '@/redux/hook';
 import { signOut } from 'firebase/auth';
+import auth from '@/configeration/firebase';
 
 export default function Navbar() {
   const { user } = useAppSelector((state) => state.user);
-  const handleLogOut = (data) => {
-    signOut(data);
+  const handleLogOut = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+      })
+      .catch((error) => {
+        // An error happened.
+      });
   };
   return (
     <nav className="w-full h-16 fixed top backdrop-blur-lg z-10">
