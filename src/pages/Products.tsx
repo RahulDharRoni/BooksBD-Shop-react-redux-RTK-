@@ -16,7 +16,7 @@ import {
 } from '@/redux/features/filter/filterSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hook';
 import { IProduct } from '@/types/globalTypes';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 
 enum GenderEnum {
   selfhelp = 'Self-Help',
@@ -29,7 +29,7 @@ interface IFormInput {
   category: GenderEnum;
   author: string;
   pricing: number;
-  status: string;
+  status: boolean;
   image_link: string;
   language: string;
   pages: number;
@@ -38,7 +38,7 @@ interface IFormInput {
 
 export default function Products() {
   const { data, isLoading, isError } = useGetBooksQuery(undefined);
-  const { register, handleSubmit, reset } = useForm<IFormInput>();
+  const { register, handleSubmit, reset, control } = useForm<IFormInput>();
   const [addNewProduct] = useAddNewProductMutation();
   // console.log(data?.data);
 
@@ -89,7 +89,7 @@ export default function Products() {
   }
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    console.log(data.status);
+    console.log(data);
     addNewProduct(data);
     reset();
   };
@@ -213,14 +213,35 @@ export default function Products() {
                     <label htmlFor="status" className="text-gray-600">
                       Status
                     </label>
-                    <select
+                    {/* <select
                       id="status"
                       className="input input-bordered w-full"
                       {...register('status')}
                     >
                       <option value="true">On Stock</option>
                       <option value="false">No Stock</option>
-                    </select>
+                    </select> */}
+                    <Controller
+                      name="status"
+                      control={control}
+                      defaultValue={false} // Set the default value
+                      render={({ field }) => (
+                        <div className="flex items-center">
+                          <input
+                            type="checkbox"
+                            {...field}
+                            id="status"
+                            className="form-checkbox h-5 w-5 text-indigo-600 transition duration-150 ease-in-out"
+                          />
+                          <label
+                            htmlFor="status"
+                            className="ml-2 text-gray-700"
+                          >
+                            In Stock
+                          </label>
+                        </div>
+                      )}
+                    />
                   </div>
 
                   <div className="w-full md:w-1/2 px-2 mb-4">
