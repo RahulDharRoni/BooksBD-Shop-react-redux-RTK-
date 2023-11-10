@@ -65,17 +65,17 @@ export default function Products() {
     (item: { category: string }) => item.category !== category
   );
 
-  if (status === 'true') {
+  if (status) {
     productsData = data?.data?.filter(
-      (item: { status: string; pricing: number; category: string }) =>
-        item.status === 'true' &&
+      (item: { status: boolean; pricing: number; category: string }) =>
+        item.status === true &&
         item.pricing < priceRange &&
         item.category === category
     );
-  } else if (status === 'false') {
+  } else if (!status) {
     productsData = data?.data?.filter(
-      (item: { status: string; pricing: number; category: string }) =>
-        item.status === 'false' &&
+      (item: { status: boolean; pricing: number; category: string }) =>
+        item.status === false &&
         item.pricing < priceRange &&
         item.category === category
     );
