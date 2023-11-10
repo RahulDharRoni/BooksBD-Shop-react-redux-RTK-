@@ -10,6 +10,7 @@ interface IProps {
 }
 
 export default function ProductCard({ product }: IProps) {
+  // console.log(product);
   const dispatch = useDispatch();
   const handleAddProduct = (product: IProduct) => {
     dispatch(addToCart(product));
@@ -21,7 +22,7 @@ export default function ProductCard({ product }: IProps) {
     <div>
       <div className="text-center rounded-2xl h-[510px] flex flex-col  justify-between p-5 overflow-hidden shadow-md border border-gray-100 hover:shadow-2xl hover:scale-[102%] transition-all gap-2">
         <Link
-          to={`/product-details/${product._id}`}
+          to={`/product-details/${product?._id}`}
           className="w-full flex flex-col justify-center items-center"
         >
           <img src={product?.image_link} alt="product" className="w-52 h-64" />

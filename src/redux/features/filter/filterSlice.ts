@@ -9,7 +9,7 @@ interface FilterState {
 // Define the initial state using that type
 const initialState: FilterState = {
   status: true,
-  priceRange: 300,
+  priceRange: 500,
   category: 'Self-Help',
 };
 

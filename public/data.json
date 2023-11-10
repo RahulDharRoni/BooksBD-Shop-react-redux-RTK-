@@ -8,7 +8,7 @@
     "pages": 180,
     "popularity": 4.5,
     "pricing": 120,
-    "status": true,
+    "status": "true",
     "category": "Classic"
   },
   {
@@ -20,7 +20,7 @@
     "pages": 320,
     "popularity": 4.7,
     "pricing": 140,
-    "status": true,
+    "status": "true",
     "category": "Classic"
   },
   {
@@ -32,7 +32,7 @@
     "pages": 328,
     "popularity": 4.4,
     "pricing": 110,
-    "status": true,
+    "status": "true",
     "category": "Dystopian"
   },
   {
@@ -44,7 +44,7 @@
     "pages": 300,
     "popularity": 4.6,
     "pricing": 150,
-    "status": true,
+    "status": "true",
     "category": "Fantasy"
   },
   {
@@ -56,7 +56,7 @@
     "pages": 250,
     "popularity": 4.3,
     "pricing": 100,
-    "status": true,
+    "status": "true",
     "category": "Romance"
   },
   {
@@ -68,7 +68,7 @@
     "pages": 371,
     "popularity": 4.6,
     "pricing": 130,
-    "status": true,
+    "status": "true",
     "category": "Self-Help"
   },
   {
@@ -80,7 +80,7 @@
     "pages": 320,
     "popularity": 4.4,
     "pricing": 120,
-    "status": true,
+    "status": "true",
     "category": "Self-Help"
   },
   {
@@ -92,7 +92,7 @@
     "pages": 320,
     "popularity": 4.5,
     "pricing": 140,
-    "status": true,
+    "status": "true",
     "category": "Self-Help"
   },
   {
@@ -104,7 +104,7 @@
     "pages": 320,
     "popularity": 4.7,
     "pricing": 150,
-    "status": true,
+    "status": "true",
     "category": "Self-Help"
   },
   {
@@ -116,7 +116,7 @@
     "pages": 224,
     "popularity": 4.3,
     "pricing": 110,
-    "status": true,
+    "status": "true",
     "category": "Self-Help"
   },
   {
@@ -128,7 +128,7 @@
     "pages": 256,
     "popularity": 4.4,
     "pricing": 100,
-    "status": true,
+    "status": "true",
     "category": "Self-Help"
   },
   {
@@ -140,7 +140,7 @@
     "pages": 381,
     "popularity": 4.6,
     "pricing": 130,
-    "status": true,
+    "status": "true",
     "category": "Self-Help"
   },
   {
@@ -152,7 +152,7 @@
     "pages": 352,
     "popularity": 4.5,
     "pricing": 140,
-    "status": true,
+    "status": "true",
     "category": "Self-Help"
   },
   {
@@ -164,7 +164,7 @@
     "pages": 137,
     "popularity": 4.3,
     "pricing": 110,
-    "status": true,
+    "status": "true",
     "category": "Self-Help"
   },
   {
@@ -176,7 +176,7 @@
     "pages": 255,
     "popularity": 4.4,
     "pricing": 120,
-    "status": true,
+    "status": "true",
     "category": "Self-Help"
   },
   {
@@ -188,7 +188,7 @@
     "pages": 447,
     "popularity": 4.6,
     "pricing": 130,
-    "status": true,
+    "status": "true",
     "category": "Horror"
   },
   {
@@ -200,7 +200,7 @@
     "pages": 1138,
     "popularity": 4.7,
     "pricing": 150,
-    "status": true,
+    "status": "true",
     "category": "Horror"
   },
   {
@@ -212,7 +212,7 @@
     "pages": 262,
     "popularity": 4.4,
     "pricing": 110,
-    "status": true,
+    "status": "true",
     "category": "Horror"
   },
   {
@@ -224,7 +224,7 @@
     "pages": 488,
     "popularity": 4.5,
     "pricing": 140,
-    "status": true,
+    "status": "true",
     "category": "Horror"
   },
   {
@@ -236,7 +236,7 @@
     "pages": 176,
     "popularity": 4.3,
     "pricing": 100,
-    "status": true,
+    "status": "true",
     "category": "Horror"
   },
   {
@@ -248,7 +248,7 @@
     "pages": 64,
     "popularity": 4.6,
     "pricing": 130,
-    "status": true,
+    "status": "true",
     "category": "Poetry"
   },
   {
@@ -260,7 +260,7 @@
     "pages": 300,
     "popularity": 4.7,
     "pricing": 150,
-    "status": false,
+    "status": "false",
     "category": "Poetry"
   },
   {
@@ -272,7 +272,7 @@
     "pages": 160,
     "popularity": 4.4,
     "pricing": 110,
-    "status": true,
+    "status": "true",
     "category": "Poetry"
   },
   {
@@ -284,7 +284,7 @@
     "pages": 176,
     "popularity": 4.5,
     "pricing": 140,
-    "status": true,
+    "status": "true",
     "category": "Poetry"
   },
   {
@@ -296,7 +296,7 @@
     "pages": 208,
     "popularity": 4.3,
     "pricing": 100,
-    "status": false,
+    "status": "false",
     "category": "Poetry"
   }
 ]

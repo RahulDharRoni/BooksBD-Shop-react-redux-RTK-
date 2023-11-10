@@ -15,8 +15,8 @@ enum GenderEnum {
   Comedy = 'Comedy',
 }
 enum statusEnum {
-  OnStock = 'On Stock',
-  NoStock = 'On Stock',
+  OnStock = true,
+  NoStock = false,
 }
 
 interface IFormInput {
@@ -34,8 +34,10 @@ export default function ProductDetails() {
   const [deleteBooks] = useDeleteBooksMutation();
 
   const { register, handleSubmit, reset } = useForm<IFormInput>();
+
   const onSubmit: SubmitHandler<IFormInput> = (Editdata) => {
     isLoading;
+
     editBooks({ _id, data: Editdata });
     console.log({ _id, data: Editdata });
     if (isSuccess) {

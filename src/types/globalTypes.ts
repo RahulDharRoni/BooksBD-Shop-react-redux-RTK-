@@ -9,6 +9,6 @@ export interface IProduct {
   pages: number;
   popularity: number;
   category?: string;
-  status: boolean;
+  status?: string;
   quantity?: number;
 }
