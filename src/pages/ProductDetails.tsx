@@ -68,7 +68,14 @@ export default function ProductDetails() {
           <div className="flex">
             <button
               className="btn"
-              onClick={() => document.getElementById('my_modal_5').showModal()}
+              onClick={() => {
+                const modalElement = document.getElementById(
+                  'my_modal_5'
+                ) as HTMLDialogElement;
+                if (modalElement) {
+                  modalElement.showModal();
+                }
+              }}
             >
               <BiEdit className="text-2xl" />
             </button>
