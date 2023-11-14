@@ -8,13 +8,6 @@ import {
   usePostCommentMutation,
 } from '@/redux/api/apiSlice';
 
-// const dummyComments = [
-//   'Bhalo na',
-//   'Ki shob ghori egula??',
-//   'Eta kono product holo ??',
-//   '200 taka dibo, hobe ??',
-// ];
-
 interface IProps {
   id: string;
 }
@@ -26,11 +19,7 @@ export default function ProductReview({ id }: IProps) {
     refetchOnMountOrArgChange: true,
     pollingInterval: 30000,
   });
-  const [postComment, { isLoading, isError, isSuccess }] =
-    usePostCommentMutation();
-  // console.log(isLoading);
-  // console.log(isError);
-  // console.log(isSuccess);
+  const [postComment] = usePostCommentMutation();
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();

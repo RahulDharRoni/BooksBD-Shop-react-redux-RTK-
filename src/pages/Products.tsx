@@ -29,7 +29,7 @@ interface IFormInput {
   category: GenderEnum;
   author: string;
   pricing: number;
-  status: boolean;
+  status: string | number | readonly string[] | undefined;
   image_link: string;
   language: string;
   pages: number;
@@ -40,7 +40,7 @@ export default function Products() {
   const { data, isLoading, isError } = useGetBooksQuery(undefined);
   const { register, handleSubmit, reset, control } = useForm<IFormInput>();
   const [addNewProduct] = useAddNewProductMutation();
-  // console.log(data?.data);
+  console.log(data?.data);
 
   const { status, priceRange, category } = useAppSelector(
     (store) => store.filter
@@ -54,7 +54,7 @@ export default function Products() {
     dispatch(filterPriceRange(value[0]));
   };
 
-  const handleCategory = (event: string) => {
+  const handleCategory = (event: any) => {
     console.log(event.target.value);
     dispatch(filterCategory(event.target.value));
   };
@@ -79,7 +79,7 @@ export default function Products() {
         item.pricing < priceRange &&
         item.category === category
     );
-  } else if (priceRange > 0) {
+  } else if (priceRange > 0 && filterdCategory) {
     productsData = data?.data?.filter(
       (item: { status: boolean; pricing: number; category: string }) =>
         item.pricing < priceRange
@@ -139,7 +139,14 @@ export default function Products() {
           <h1 className="text-2xl uppercase mb-2">Add Product</h1>
           <button
             className="btn btn-accent text-white"
-            onClick={() => document.getElementById('my_modal_5').showModal()}
+            onClick={() => {
+              const modalElement = document.getElementById(
+                'my_modal_5'
+              ) as HTMLDialogElement;
+              if (modalElement) {
+                modalElement.showModal();
+              }
+            }}
           >
             <AiFillFileAdd className="text-2xl" /> Add Product
           </button>
@@ -213,18 +220,11 @@ export default function Products() {
                     <label htmlFor="status" className="text-gray-600">
                       Status
                     </label>
-                    {/* <select
-                      id="status"
-                      className="input input-bordered w-full"
-                      {...register('status')}
-                    >
-                      <option value="true">On Stock</option>
-                      <option value="false">No Stock</option>
-                    </select> */}
+
                     <Controller
                       name="status"
                       control={control}
-                      defaultValue={false} // Set the default value
+                      defaultValue="false" // Set the default value
                       render={({ field }) => (
                         <div className="flex items-center">
                           <input

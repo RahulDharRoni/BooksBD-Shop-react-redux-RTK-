@@ -39,6 +39,14 @@
 .slider-slide {
   position: relative;
 }
+.slideBg {
+  background-image: url('../../assets/images/home-3-slider-1.webp');
+  height: 700px;
+}
+.secondSliderBg {
+  background-image: url('../../assets/images/home-3-slider-2.webp');
+  height: 700px;
+}
 
 .slider-slide::before {
   content: '';

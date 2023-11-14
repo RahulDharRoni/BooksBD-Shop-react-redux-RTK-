@@ -7,10 +7,8 @@ import catgalmid from '@/assets/images/cat-gal-mid.webp';
 import catgalsmall from '@/assets/images/cat-gal-small.webp';
 import catgalsmall2 from '@/assets/images/cat-gal-small-2.webp';
 import catgalmid2 from '@/assets/images/cat-gal-mid-2.webp';
-import home3 from '@/assets/images/home-3-slider-1.webp';
 import books1 from '@/assets/images/books1.png';
 import books2 from '@/assets/images/books2.png';
-import home3slider2 from '@/assets/images/home-3-slider-2.webp';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Link } from 'react-router-dom';
 import Footer from '@/layouts/Footer';
@@ -32,10 +30,6 @@ export default function Home() {
       {' '}
       {/* Home hero section  */}
       <Swiper
-        style={{
-          '--swiper-navigation-color': '#fff',
-          '--swiper-pagination-color': '#fff',
-        }}
         speed={600}
         parallax={true}
         pagination={{
@@ -48,19 +42,10 @@ export default function Home() {
         <div
           slot="container-start"
           className="parallax-bg"
-          // style={{
-          //   'background-image': `url(${home3slider2})`,
-          // }}
           data-swiper-parallax="-23%"
         ></div>
         <SwiperSlide className="slider-slide">
-          <div
-            className="flex justify-between items-center px-72 "
-            style={{
-              'background-image': `url(${home3})`,
-              height: '500px',
-            }}
-          >
+          <div className="flex justify-between items-center px-72 slideBg ">
             <div className="basis-2/3">
               <div
                 className="font-extrabold text-6xl"
@@ -93,13 +78,7 @@ export default function Home() {
           </div>
         </SwiperSlide>
         <SwiperSlide className="slider-slide">
-          <div
-            className="flex justify-between items-center px-72"
-            style={{
-              'background-image': `url(${home3slider2})`,
-              height: '500px',
-            }}
-          >
+          <div className="flex justify-between items-center px-72 secondSliderBg">
             <div className="basis-2/3">
               <div
                 className="font-extrabold text-6xl"

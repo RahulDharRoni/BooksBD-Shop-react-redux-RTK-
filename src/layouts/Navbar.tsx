@@ -11,7 +11,7 @@ import {
 } from '../components/ui/dropdown-menu';
 import { HiOutlineSearch } from 'react-icons/hi';
 import Cart from '../components/Cart';
-import logo from '../assets/images/technet-logo.png';
+
 import { useAppSelector } from '@/redux/hook';
 import { signOut } from 'firebase/auth';
 import auth from '@/configeration/firebase';
@@ -21,10 +21,10 @@ export default function Navbar() {
   const handleLogOut = () => {
     signOut(auth)
       .then(() => {
-        // Sign-out successful.
+        console.log('All ok');
       })
       .catch((error) => {
-        // An error happened.
+        console.log(error);
       });
   };
   return (

@@ -14,10 +14,6 @@ enum GenderEnum {
   Romantic = 'Romantic',
   Comedy = 'Comedy',
 }
-enum statusEnum {
-  OnStock = true,
-  NoStock = false,
-}
 
 interface IFormInput {
   name: string;

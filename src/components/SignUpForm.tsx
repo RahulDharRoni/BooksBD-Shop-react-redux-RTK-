@@ -18,7 +18,7 @@ interface createSigninForm {
 type UserAuthFormProps = React.HTMLAttributes<HTMLDivElement>;
 
 export function SignupForm({ className, ...props }: UserAuthFormProps) {
-  const [userData, { isLoading, isError }] = useUserDataMutation();
+  const [userData] = useUserDataMutation();
   const navigate = useNavigate();
 
   const {
