@@ -2,7 +2,10 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const api = createApi({
   reducerPath: 'api',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5000/' }),
+  baseQuery: fetchBaseQuery({
+    baseUrl:
+      'https://book-bd-react-redux-node-server-7bv2rrluw-my-work-9e09eeac.vercel.app',
+  }),
   tagTypes: [
     'comments',
     'editBooks',

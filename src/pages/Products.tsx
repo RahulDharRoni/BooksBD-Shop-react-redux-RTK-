@@ -2,7 +2,7 @@ import ProductCard from '@/components/ProductCard';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
-import { useToast } from '@/components/ui/use-toast';
+
 import {
   useAddNewProductMutation,
   useGetBooksQuery,
@@ -37,7 +37,7 @@ interface IFormInput {
 }
 
 export default function Products() {
-  const { data, isLoading, isError } = useGetBooksQuery(undefined);
+  const { data } = useGetBooksQuery(undefined);
   const { register, handleSubmit, reset, control } = useForm<IFormInput>();
   const [addNewProduct] = useAddNewProductMutation();
   console.log(data?.data);
@@ -47,7 +47,6 @@ export default function Products() {
   );
 
   const dispatch = useAppDispatch();
-  const { toast } = useToast();
 
   const handleSlider = (value: number[]) => {
     console.log(value);
